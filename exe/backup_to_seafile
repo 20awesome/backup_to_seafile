@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+gem_name='backup_to_seafile'
+path = ENV["GEM_HOME"]
+version= Gem.loaded_specs[gem_name].version
+require "#{path}/gems/#{gem_name}-#{version}/lib/SeafileBackup.rb"
+if ARGV[0] == "--config"
+  seafile_account = SeafileBackup.new
+  seafile_account.save_account_details
+elsif ARGV[0] == "--backup"
+  seafile_account = SeafileBackup.new
+  seafile_account.load_account_details
+  seafile_account.make_backup
+else
+  puts "type '#{gem_name} --config'  for config backups"
+  puts "type '#{gem_name} --backup'  for perform backups"
+
+end
+
