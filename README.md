@@ -22,8 +22,13 @@ Or install it yourself as:
 
 ## Usage
 
-first create config for backup by : "backup_to_seafile --config"
-second backup your files  by : "backup_to_seafile --backup"
+first create config for backup by : 
+
+    $ backup_to_seafile --config
+
+second backup your files  by : 
+
+    $ backup_to_seafile --backup
 
 ## Development
 
